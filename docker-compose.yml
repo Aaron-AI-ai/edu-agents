@@ -1,0 +1,32 @@
+services:
+  web:
+    build:
+      context: ./services/web
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"
+    environment:
+      - AGENT_SERVICE_URL=http://agent:8000
+    depends_on:
+      - agent
+    volumes:
+      - ./services/web:/app
+    networks:
+      - edu-agents-network
+
+  agent:
+    build:
+      context: ./services/agent
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./services/agent:/app
+    networks:
+      - edu-agents-network
+
+networks:
+  edu-agents-network:
+    driver: bridge
