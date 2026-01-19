@@ -2,7 +2,7 @@
 name = "edu-agents-web"
 version = "0.1.0"
 description = "Streamlit Web Service for edu-agents"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
     "streamlit>=1.40.0",
     "httpx>=0.28.0",

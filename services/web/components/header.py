@@ -67,6 +67,6 @@ def render_header():
                 )
 
     with col3:
-        st.text_input("", placeholder="Search...", label_visibility="collapsed")
+        st.text_input("Search", placeholder="Search...", label_visibility="collapsed")
 
     st.markdown("---")
